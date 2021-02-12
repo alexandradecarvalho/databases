@@ -43,7 +43,7 @@ public class Autocomplete {
             System.out.println("Search for ('Enter' for quit): ");
             name = sc.nextLine();
             String min = "[" + name;
-            String max = "[" + name + "[\\xff";
+            String max = "[" + name + "\\xff";
             if(!name.equals("")){
                 j.jedis.zrangeByLex("nameset",min, max).stream().forEach(System.out::println);
             }
